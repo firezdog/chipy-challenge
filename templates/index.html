@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exchange Rates</title>
+</head>
+<body>
+  <form method="POST" action="/">
+    <select name="convert_from">
+      {% for rate in exchange_rates %}
+      <option value="{{ rate }}">{{ rate }}</option>
+      {% endfor %}
+    </select>
+    <input name="amount_to_change" type="number" />
+    <select name="convert_to">
+      {% for rate in exchange_rates %}
+      <option value="{{ rate }}">{{ rate }}</option>
+      {% endfor %}
+    </select>
+    <button>Submit</button>
+  </form>
+</body>
+</html>
